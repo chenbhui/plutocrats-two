@@ -16,7 +16,7 @@ export default async function runAnimation($el, animations = []) {
     })
 
     for (let i = 0, len = animations.length; i < len; i++) {
-        await play(animations[i])
+        await play(animations[i]);
     }
 }
 

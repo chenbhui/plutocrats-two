@@ -1,253 +1,145 @@
+<!-- 预览出现的框 -->
 <template>
-  <div class="container">
-    <!-- 顶部内容区 -->
-    <div class="top-page" ref="top">
-      <div class="top-container">
-        <!-- 左边图片 -->
-        <div class="left-images">
-          <img src="@/assets/images/home.jpg" alt="" />
-        </div>
-        <!-- 右边内容 -->
-        <div class="right-content">
-          <!-- 标题 -->
-          <div class="title">
-            love and expectation <br />
-            are ahead
-          </div>
-          <!-- 文本内容 -->
-          <div class="text">
-            No matter how dark the moment is,love and expectation are always
-            ahead. The world is very simple, so is life
-          </div>
-          <!-- 按钮 -->
-          <button class="btn" @click="slideDown">SLIDE DOWN</button>
-        </div>
+  <div ref="container" class="bg">
+    <div class="canvas-container">
+        <ComponentWrapper v-for="(item, index) in componentData" :key="index" :config="item" />
       </div>
-      <!-- company -->
-      <div class="company">
-        <img src="@/assets/images/company.jpg" alt="" />
       </div>
-    </div>
-    <div class="center-page" id="center">
-      <div class="center-container">
-        <!-- 左边内容 -->
-        <div class="right-content">
-          <!-- 标题 -->
-          <div class="title">
-            psychological service <br />
-            are ahead
-          </div>
-          <!-- 文本内容 -->
-          <div class="text">
-            No matter how dark the moment is,love and expectation are always
-            ahead. The world is very simple, so is life
-          </div>
-          <!-- 按钮 -->
-          <button class="btn">Read more</button>
-        </div>
-        <!-- 右边图片 -->
-        <div class="left-images">
-          <img src="@/assets/images/home.jpg" alt="" />
-        </div>
-      </div>
-    </div>
-    <div class="bottom-page">
-      <div class="bottom-container">
-        <div class="main-title">
-          Gain the full control over reaching your leads
-        </div>
-        <div class="imgGroup">
-          <div class="imgContainer">
-            <!-- 图片 -->
-            <img src="@/assets/images/homeleft.jpg" alt="" />
-            <!-- 容器内标题 -->
-            <div class="title">Auto-schedule your books</div>
-            <!-- 容器内的文本内容 -->
-            <div class="text">
-              you may defind the number of attempt your agent <br />
-              you may defind the number of attempt <br />
-              you may defind the number of attempt your agent <br />
-              you may defind the number of attempt <br />
-            </div>
-          </div>
-          <div class="imgContainer">
-            <!-- 图片 -->
-            <img src="@/assets/images/homeright.jpg" alt="" />
-            <!-- 容器内标题 -->
-            <div class="title">Auto-schedule your books</div>
-            <!-- 容器内的文本内容 -->
-            <div class="text">
-              you may defind the number of attempt your agent <br />
-              you may defind the number of attempt <br />
-              you may defind the number of attempt your agent <br />
-              you may defind the number of attempt <br />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 </template>
 
 <script>
+import { getStyle } from '@/utils/style'
+import ComponentWrapper from '@/components/ComponentWrapper'
+
 export default {
+  components: { ComponentWrapper },
   data() {
-    return {};
+    return {
+      componentData: [
+        {
+          "animations": [],
+          "events": {},
+          "groupStyle": {},
+          "isLock": false,
+          "component": "AnchorPoint",
+          "label": "锚点",
+          "propValue": "你好",
+          "icon": "icon-lianjie",
+          "style": {
+            "rotate": 0,
+            "opacity": 1,
+            "width": 200,
+            "height": 28,
+            "fontSize": 14,
+            "fontWeight": 400,
+            "lineHeight": "",
+            "letterSpacing": 0,
+            "textAlign": "",
+            "color": "",
+            "top": 197.99999237060547,
+            "left": 286.99998474121094
+          },
+          "id": 0
+        },
+        {
+          "animations": [
+            { "label": "右逆时针旋转", "value": "rotateInDownRight", "pending": false, "animationTime": 1.07, "isLoop": true } ,
+          ], 
+          "events": {},
+          "groupStyle": {},
+          "isLock": false,
+          "component": "Picture",
+          "label": "图片",
+          "icon": "icon-charutupian",
+          "propValue": {
+            "url": "/img/home.936450a4.jpg",
+            "flip": {
+              "horizontal":
+                false,
+              "vertical": false
+            }
+          },
+          "style": {
+            "rotate": 0,
+            "opacity": 1,
+            "width": 300,
+            "height": 200,
+            "borderRadius": "",
+            "top": 149,
+            "left": 429
+          },
+          "id": 1
+        },
+        {
+          "animations": [],
+          "events": {},
+          "groupStyle": {},
+          "isLock": false,
+          "component": "Picture",
+          "label": "图片",
+          "icon": "icon-charutupian",
+          "propValue": {
+            "url": "/img/home.936450a4.jpg",
+            "flip": {
+              "horizontal": false,
+              "vertical": false
+            }
+          },
+          "style": {
+            "rotate": 0,
+            "opacity": 1,
+            "width": 300,
+            "height": 200,
+            "borderRadius": "",
+            "top": 652.1428575515747,
+            "left": 344.99998474121094
+          },
+          "id": 2
+        },
+        { "animations": [], "events": {}, "groupStyle": {}, "isLock": false, "component": "Picture", "label": "图片", "icon": "icon-charutupian", "propValue": { "url": "/img/home.936450a4.jpg", "flip": { "horizontal": false, "vertical": false } }, "style": { "rotate": 0, "opacity": 1, "width": 300, "height": 200, "borderRadius": "", "top": 924, "left": 293 }, "id": 3 },
+        { "animations": [], "events": {}, "groupStyle": {}, "isLock": false, "component": "VText", "label": "文字", "propValue": "我真棒", "icon": "icon-wenzi", "style": { "rotate": 0, "opacity": 1, "width": 200, "height": 28, "fontSize": 14, "fontWeight": 400, "lineHeight": "", "letterSpacing": 0, "textAlign": "", "color": "", "top": 71.14285278320312, "left": 208.99998474121094 }, "id": 4 },
+        { "animations": [], "events": { "alert": "你好" }, "groupStyle": {}, "isLock": false, "component": "VButton", "label": "按钮", "propValue": "按钮", "icon": "icon-anniuzu", "style": { "rotate": 90, "opacity": 1, "width": 100, "height": 34, "borderWidth": 1, "borderColor": "", "borderRadius": "", "fontSize": 14, "fontWeight": 400, "lineHeight": "", "letterSpacing": 0, "textAlign": "", "color": "rgba(30, 144, 255, 1)", "backgroundColor": "rgba(255, 120, 0, 1)", "top": 99.14285278320312, "left": 361 }, "id": 5 },
+{ "animations": [], "events": {}, "groupStyle": {}, "isLock": false, "component": "Video", "label": "视频", "icon": "icon-shipinbofang", "propValue": { "url": "/media/cutePKQ.f5761f43.mp4", "flip": { "horizontal": false, "vertical": false } }, "style": { "rotate": 0, "opacity": 1, "width": 300, "height": 200, "borderRadius": "", "top": 230, "left": 138 }, "id": 6 },
+      ]
+    }
   },
   methods: {
-    slideDown() {
-      scrollTo({
-        top: this.$refs.top.scrollHeight + 50,
-        left: 0,
-        behavior: "smooth",
-      });
-    },
+    getStyle,
   },
-};
+}
 </script>
 
 <style lang="less" scoped>
-.container {
-  background-color: rgb(226, 244, 247);
+.bg {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  background:palegoldenrod;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+  padding: 20px;
 
-  .top-page {
-    height: calc(100vh - 50px);
+  .canvas-container {
+    width: calc(100% - 40px);
+    height: calc(100% - 120px);
+    overflow: auto;
 
-    .top-container {
-      width: 1345px;
-      margin: 0 auto;
-      height: 85%;
-      display: flex;
-      align-items: center;
-      .left-images {
-        width: 50%;
-        img {
-          width: 100%;
-        }
-      }
-      .right-content {
-        width: 50%;
-        height: 60%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-around;
-        .title {
-          color: rgb(83, 119, 172);
-          font-size: 40px;
-          font-weight: 600;
-          text-align: center;
-        }
-        .text {
-          font-size: 20px;
-          text-align: center;
-        }
-        .btn {
-          cursor: pointer;
-          color: white;
-          font-weight: 600;
-          background-color: rgb(83, 119, 172);
-          width: 200px;
-          height: 60px;
-          border: 0;
-          border-radius: 5px;
-          font-size: 20px;
-        }
-      }
-    }
-    .company {
-      width: 100%;
-      position: absolute;
-      bottom: 0;
-      img {
-        // width: 100%;
-        // height: 60px;
-        vertical-align: middle;
-        width: 100%;
-      }
+    .canvas {
+      background: #fff;
+      position: relative;
+      margin: auto;
     }
   }
-  .center-page {
-    height: 100vh;
-    .center-container {
-      width: 1345px;
-      margin: 0 auto;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      .left-images {
-        width: 50%;
-        img {
-          width: 100%;
-        }
-      }
-      .right-content {
-        width: 50%;
-        height: 60%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-around;
-        .title {
-          color: rgb(83, 119, 172);
-          font-size: 40px;
-          font-weight: 600;
-          text-align: center;
-        }
-        .text {
-          font-size: 20px;
-          text-align: center;
-        }
-        .btn {
-          cursor: pointer;
-          color: white;
-          font-weight: 600;
-          background-color: rgb(83, 119, 172);
-          width: 200px;
-          height: 60px;
-          border: 0;
-          border-radius: 5px;
-          font-size: 20px;
-        }
-      }
-    }
-  }
-  .bottom-page {
-    height: calc(100vh - 50px);
-    .bottom-container {
-      width: 1345px;
-      height: 100%;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      .main-title {
-        text-align: center;
-        font-size: 30px;
-        font-weight: 600;
-      }
-      .imgGroup {
-        display: flex;
-        justify-content: space-around;
-        .imgContainer {
-          height: 500px;
-          width: 400px;
-          border-radius: 12px;
-          border: 2px solid rgb(219, 233, 234);
-          background-color: white;
-          text-align: center;
-          img {
-            width: 380px;
-            height: 291px;
-          }
-          .title {
-            font-weight: 600;
-            font-size: 20px;
-            line-height: 80px;
-          }
-        }
-      }
-    }
+
+  .close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
   }
 }
 </style>
