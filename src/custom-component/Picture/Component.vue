@@ -53,8 +53,9 @@ export default {
             this.canvas.height = height
             if (this.isFirst) {
                 this.isFirst = false
-                this.img = document.createElement('img')
-                this.img.src = this.propValue.url
+                this.img = document.createElement('img');
+                // console.log(this.propValue.url);
+                this.img.src = this.propValue.url;
                 this.img.onload = () => {
                     this.ctx.drawImage(this.img, 0, 0, width, height)
                     this.mirrorFlip();
