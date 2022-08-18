@@ -52,7 +52,6 @@ export default {
 .video-box {
     position: relative;
     width: 100%;
-    padding-bottom: 28%;
     overflow: hidden;
 
     video {
