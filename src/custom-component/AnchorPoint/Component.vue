@@ -2,8 +2,8 @@
     <div class="v-anchor preview">
         <a 
             :style="{ verticalAlign: element.style.verticalAlign }" 
-            v-html="localelement.propValue"
-            href="https://www.iconfont.cn"
+            v-html="localelement.propValue.value"
+            :href="localelement.propValue.href"
             target="_blank"
         ></a>
     </div>

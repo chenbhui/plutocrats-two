@@ -16,7 +16,10 @@ const list = [
     {
         component: 'AnchorPoint',
         label: '锚点',
-        propValue: '点击跳转',
+        propValue: {
+            value: '点击跳转',
+            href: 'https://www.baidu.com',
+        },
         icon: 'icon-lianjie',
         style: {
             width: 200,
